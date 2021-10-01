@@ -1,0 +1,13 @@
+// for page element
+html {
+  font-family: $font-sans;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

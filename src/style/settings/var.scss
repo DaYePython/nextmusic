@@ -1,0 +1,18 @@
+// font
+$font-sans: 'Helvetica Neue', helvetica, arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC',
+  'WenQuanYi Micro Hei', sans-serif;
+$primary-color: #ff6700 !default;
+$second-color: #333 !default;
+
+// 字体颜色
+$text-primary-color: $second-color;
+$text-second-color: #fff !default;
+$text-third-color: $primary-color !default;
+$text-gray-color: #b0b0b0 !default;
+$text-black-color: #424242;
+
+// 背景颜色
+$bg-primary-color: #f5f5f5;
+$bg-second-color: #fff;
+$bg-third-color: rgba(105, 101, 101, 0.6);
+$bg-fourth-color: $second-color;
