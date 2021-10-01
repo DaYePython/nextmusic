@@ -20,7 +20,7 @@
     "vue": "^3.2.6",
     "vue-router": "^3.5.2",
     "vue3-lazyload": "^0.2.2-beta",
-    "vuex": "^3.6.2"
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
