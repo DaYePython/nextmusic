@@ -1,69 +1,76 @@
 module.exports = {
   root: true,
-  plugins: ['stylelint-order'],
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  plugins: ["stylelint-order", "stylelint-scss"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-recommended-scss",
+  ],
   rules: {
-    'selector-pseudo-class-no-unknown': [
+    "string-quotes": "single",
+    "property-no-unknown": true,
+    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-class-no-unknown": [
       true,
       {
-        ignorePseudoClasses: ['global'],
+        ignorePseudoClasses: ["global"],
       },
     ],
-    'selector-pseudo-element-no-unknown': [
+    "selector-pseudo-element-no-unknown": [
       true,
       {
-        ignorePseudoElements: ['v-deep', '::deep', '>>>'],
+        ignorePseudoElements: ["v-deep", "::deep", ">>>", "/deep/"],
       },
     ],
-    'at-rule-no-unknown': [
+    "at-rule-no-unknown": [
       true,
       {
         ignoreAtRules: [
-          'tailwind',
-          'apply',
-          'variants',
-          'responsive',
-          'screen',
-          'function',
-          'if',
-          'each',
-          'include',
-          'mixin',
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "function",
+          "if",
+          "each",
+          "include",
+          "mixin",
         ],
       },
     ],
-    'no-empty-source': null,
-    'named-grid-areas-no-invalid': null,
-    'unicode-bom': 'never',
-    'no-descending-specificity': null,
-    'font-family-no-missing-generic-family-keyword': null,
-    'declaration-colon-space-after': 'always-single-line',
-    'declaration-colon-space-before': 'never',
-    // 'declaration-block-trailing-semicolon': 'always',
-    'rule-empty-line-before': [
-      'always',
+    "no-empty-source": null,
+    "named-grid-areas-no-invalid": null,
+    "unicode-bom": "never",
+    "no-descending-specificity": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "declaration-colon-space-after": "always-single-line",
+    "declaration-colon-space-before": "never",
+    // "declaration-block-trailing-semicolon": "always",
+    "rule-empty-line-before": [
+      "always",
       {
-        ignore: ['after-comment', 'first-nested'],
+        ignore: ["after-comment", "first-nested"],
       },
     ],
-    'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
-    'order/order': [
+    "unit-no-unknown": [true, { ignoreUnits: ["rpx"] }],
+    "order/order": [
       [
-        'dollar-variables',
-        'custom-properties',
-        'at-rules',
-        'declarations',
+        "dollar-variables",
+        "custom-properties",
+        "at-rules",
+        "declarations",
         {
-          type: 'at-rule',
-          name: 'supports',
+          type: "at-rule",
+          name: "supports",
         },
         {
-          type: 'at-rule',
-          name: 'media',
+          type: "at-rule",
+          name: "media",
         },
-        'rules',
+        "rules",
       ],
-      { severity: 'warning' },
+      { severity: "warning" },
     ],
     "order/properties-order": [
       "overflow",
@@ -141,8 +148,8 @@ module.exports = {
       "box-shadow",
       "text-shadow",
       "resize",
-      "transition"
-    ]
+      "transition",
+    ],
   },
-  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
+  ignoreFiles: ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts", "**/*.json"],
 }

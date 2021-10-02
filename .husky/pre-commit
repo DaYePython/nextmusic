@@ -8,3 +8,5 @@
 npm run lint:lint-staged
 
 npm run lint:pretty
+
+npm run lint:ls-lint
