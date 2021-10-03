@@ -9,4 +9,8 @@ import 'normalize.css/normalize.css'
 //icon-park
 import '@icon-park/vue-next/styles/index.css'
 
+// windicss
+import 'virtual:windi.css'
+import 'virtual:windi-devtools'
+
 createApp(App).mount('#app')
