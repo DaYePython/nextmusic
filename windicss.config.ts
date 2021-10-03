@@ -27,7 +27,7 @@ export default defineConfig({
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Helvetica", "PingFang SC", "Tahoma", "Arial", "simsun", "Microsoft YaHei", "sans-serif"],
+                sans: ["-apple-system", "BlinkMacSystemFont", 'Helvetica Neue', "Helvetica", "Segoe UI", "Arial", "Roboto", 'PingFang SC', "miui", 'Hiragino Sans GB', 'Microsoft Yahei', "sans-serif"],
             }
         }
     }

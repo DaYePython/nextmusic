@@ -2,13 +2,42 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 import Components from 'unplugin-vue-components/vite'
+import {
+  VantResolver,
+} from 'unplugin-vue-components/resolvers'
+
 import WindiCSS from "vite-plugin-windicss"
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), Components({ dts: true }), WindiCSS()],
+  plugins: [
+    vue(),
+    Icons({ autoInstall: true }),
+    Components({
+      extensions: ['vue'],
+
+      // allow auto import and register components used in markdown
+      include: [/\.vue$/, /\.vue\?vue/],
+
+      // custom resolvers
+      resolvers: [
+        VantResolver(),
+        // auto import icons
+        // https://github.com/antfu/unplugin-icons
+        IconsResolver({
+          componentPrefix: '',
+          enabledCollections: ['carbon']
+        }),
+      ],
+
+      dts: 'src/components.d.ts',
+    }),
+    WindiCSS()
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
@@ -30,6 +59,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['vue', 'vuex', 'vue-router', 'axios'],
+    // 强制加入预编译
+    include: ['vue', 'vuex', 'vue-router', 'axios', 'vant'],
   },
 })
