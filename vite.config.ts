@@ -9,6 +9,7 @@ import {
 import WindiCSS from "vite-plugin-windicss"
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import CompressionPlugin from 'vite-plugin-compression'
 
 import { resolve } from 'path'
 
@@ -36,7 +37,14 @@ export default defineConfig({
 
       dts: 'src/components.d.ts',
     }),
-    WindiCSS()
+    WindiCSS(),
+    CompressionPlugin({
+      verbose: true,
+      disable: false,
+      threshold: 10240,
+      algorithm: 'gzip',
+      ext: '.gz'
+    })
   ],
   resolve: {
     alias: {
@@ -47,7 +55,10 @@ export default defineConfig({
       '@utils': resolve(__dirname, './src/utils'),
     },
   },
-  server: {},
+  server: {
+    cors: true,
+    port: 4000,
+  },
   css: {
     preprocessorOptions: {
       scss: {

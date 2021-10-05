@@ -5279,6 +5279,15 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
+vite-plugin-compression@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.nlark.com/vite-plugin-compression/download/vite-plugin-compression-0.3.5.tgz#1e5338eb43e60128de6d6f22b2aabf0e3dc0c17f"
+  integrity sha1-HlM460PmASjebW8isqq/Dj3AwX8=
+  dependencies:
+    chalk "^4.1.2"
+    debug "^4.3.2"
+    fs-extra "^10.0.0"
+
 vite-plugin-windicss@^1.4.9:
   version "1.4.9"
   resolved "https://registry.npmmirror.com/vite-plugin-windicss/download/vite-plugin-windicss-1.4.9.tgz#7f97a6157790d614d4cc518e86cfd62abc189285"
